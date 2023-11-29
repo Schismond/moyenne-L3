@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-block: 24px;
+  min-height: 100vh;
+  font-family: poppins, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.module {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modules {
+  display: grid;
+  gap: 12px;
+}
+
+.notes {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Basic Button Style */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #3498db;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect */
+button:hover {
+  background-color: #ffffff;
+  color: #3498db;
+}
+
+.btn {
+  display: flex;
+  gap: 24px;
+}
+
+.affichages {
+  display: flex;
+  gap: 3rem;
+}
+
+/* gpt */
+
+/* Style for the number input */
+input[type="number"] {
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the increment and decrement buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
