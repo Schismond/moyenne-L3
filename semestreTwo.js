@@ -172,32 +172,51 @@ calculate.addEventListener("click", function () {
     return credits;
   }
 
-  moyennes = [
-    Sondages.calculMoyenneFinale(),
-    python.calculMoyenneFinale(),
-    DataM.calculMoyenneFinale(),
-    Economie.calculMoyenneFinale(),
-    Memoire.calculMoyenneFinale(),
-  ];
-
-  function calculerMoyenne(moyennes) {
+  function calculerMoyenne(modules) {
     let m = 0;
-    for (let i = 0; i < moyennes.length; i++) {
-      m = m + moyennes[i];
+    let coef = 0;
+    for (let i = 0; i < modules.length; i++) {
+      m = m + modules[i].calculMoyenneFinale();
+      coef = coef + modules[i].coefficient;
     }
-    return (m / 15).toFixed(2);
+    return (m / coef).toFixed(2);
   }
-  let moyenneGenerale = calculerMoyenne(moyennes);
+
+  const displayUnitResult = (element, modules, moduleName, isValidated) => {
+    const moyenne = calculerMoyenne(modules);
+    const status = isValidated || moyenne >= 10 ? "(validée)" : "(non validée)";
+    element.innerText = `Unité ${moduleName} : ${creditCalculator(
+      modules
+    )} ${status}`;
+  };
+
+  const moyenneGenerale = calculerMoyenne(modules);
+
+  displayUnitResult(
+    uniteFondamentaleTwo,
+    modulesUF,
+    "Fondamentale",
+    moyenneGenerale >= 10
+  );
+  displayUnitResult(
+    uniteMethodologique,
+    modulesUM,
+    "Méthodologique",
+    moyenneGenerale >= 10
+  );
+  displayUnitResult(
+    uniteDecouverte,
+    [Memoire],
+    "Découvertes",
+    moyenneGenerale >= 10
+  );
 
   moyenneSemesterTwo.innerText = `Moyenne Générale : ${moyenneGenerale}`;
-  creditSemesterTwo.innerText = `Total crédits : ${creditCalculator(modules)}`;
-  uniteFondamentaleTwo.innerText = `Unité Fondamentale :  ${creditCalculator(
-    modulesUF
-  )}`;
-  uniteMethodologique.innerText = `Unité transversales : ${creditCalculator(
-    modulesUM
-  )}`;
-  uniteDecouverte.innerText = `Unité Découvertes : ${creditCalculator([
-    Memoire,
-  ])}`;
+  if (moyenneGenerale >= 10) {
+    creditSemesterTwo.innerText = "Total crédits : 30";
+  } else {
+    creditSemesterTwo.innerText = `Total crédits : ${creditCalculator(
+      modules
+    )}`;
+  }
 });
