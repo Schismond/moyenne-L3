@@ -70,11 +70,10 @@ class ModuleSecondaire extends Module {
 }
 
 class Stage extends Module {
-
   constructor(noteExamen, coefficient, credits) {
     super(noteExamen, null, null, coefficient, credits);
   }
-  
+
   // constructor(noteStage, coefficient, credits) {
   //   this.noteStage = parseFloat(noteStage);
   //   this.coefficient = parseFloat(coefficient);
@@ -145,6 +144,8 @@ calculate.addEventListener("click", function () {
   }
   verifierChamps();
 
+  /***************************************************** Modules ******************************************************/
+
   let simulation = new Module(
     examSimulation.value,
     tdSimulation.value,
@@ -152,6 +153,7 @@ calculate.addEventListener("click", function () {
     3,
     6
   );
+
   let python = new ModuleSecondaire(examPython.value, tdPython.value, 3, 6);
   let mesure = new ModuleSecondaire(examMesure.value, tdMesure.value, 3, 6);
   let statInf = new ModuleSecondaire(examStatInf.value, tdStatInf.value, 3, 5);
@@ -162,6 +164,8 @@ calculate.addEventListener("click", function () {
     4
   );
   let stage = new Stage(noteStage.value, 3, 3);
+
+  /***************************************************** VARIABLES ******************************************************/
 
   let moyenneSimulation = document.getElementById("moyenneSimulation");
   let moyennePython = document.getElementById("moyennePython");
@@ -174,6 +178,11 @@ calculate.addEventListener("click", function () {
   let uniteMethodologique = document.getElementById("umOne");
   let uniteDecouverte = document.getElementById("udOne");
 
+  let modulesUF = [simulation, python, mesure];
+  let modulesUM = [statInf, statPrev];
+
+  /***************************************************** INPUTS ******************************************************/
+
   moyenneSimulation.placeholder = simulation.calculMoyenne();
   moyennePython.placeholder = python.calculMoyenne();
   moyenneMesure.placeholder = mesure.calculMoyenne();
@@ -181,17 +190,9 @@ calculate.addEventListener("click", function () {
   moyenneStatPrev.placeholder = statPrev.calculMoyenne();
   moyenneStage.placeholder = stage.calculMoyenne();
 
+  /***************************************************** FUNCTIONS AND OUTPUTS ******************************************************/
+
   let modules = [simulation, python, mesure, statInf, statPrev, stage];
-
-  moyennes = [
-    simulation.calculMoyenneFinale(),
-    python.calculMoyenneFinale(),
-    mesure.calculMoyenneFinale(),
-    statInf.calculMoyenneFinale(),
-    statPrev.calculMoyenneFinale(),
-    stage.calculMoyenneFinale(),
-  ];
-
   function creditCalculator(modules) {
     let credits = 0;
     for (let i = 0; i < modules.length; i++) {
@@ -202,19 +203,25 @@ calculate.addEventListener("click", function () {
     return credits;
   }
 
-  let modulesUF = [simulation, python, mesure];
-  let modulesUM = [statInf, statPrev];
+  moyennes = [
+    simulation.calculMoyenneFinale(),
+    python.calculMoyenneFinale(),
+    mesure.calculMoyenneFinale(),
+    statInf.calculMoyenneFinale(),
+    statPrev.calculMoyenneFinale(),
+    stage.calculMoyenneFinale(),
+  ];
 
-  let m = 0;
-  let cradits = 0;
-  for (let i = 0; i < moyennes.length; i++) {
-    m = m + moyennes[i];
+  function calculerMoyenne(moyennes) {
+    let m = 0;
+    for (let i = 0; i < moyennes.length; i++) {
+      m = m + moyennes[i];
+    }
+    return (m / 17).toFixed(2);
   }
-  creditCalculator(modules);
-  creditCalculator(modulesUF);
-  creditCalculator(modulesUM);
+  let moyenneGenerale = calculerMoyenne(moyennes);
 
-  moyenneSemesterOne.innerText = `Moyenne Générale : ${(m / 17).toFixed(2)}`;
+  moyenneSemesterOne.innerText = `Moyenne Générale : ${moyenneGenerale}`;
   creditSemesterOne.innerText = `Total crédits : ${creditCalculator(modules)}`;
   uniteFondamentaleOne.innerText = `Unité Fondamentale :  ${creditCalculator(
     modulesUF
