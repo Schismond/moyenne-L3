@@ -1,214 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semestre 2</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
   </head>
   <body>
-    <h1>Moyenne L3 STID</h1>
-    <main>
-      <div class="modules">
-        <div class="module">
-          <p class="nomModule">Simulation</p>
-          <div class="notes">
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="examSimulation"
-              placeholder="exam"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="tdSimulation"
-              placeholder="td"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="tpSimulation"
-              placeholder="tp"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="moyenneSimulation"
-              disabled
-            />
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Semestre 2</title>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
+        <h1>Moyenne L3 STID</h1>
+        <main>
+          <div class="modules">
+            <div class="module">
+              <p class="nomModule">Sondages</p>
+              <div class="notes">
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="examSondages"
+                  placeholder="exam"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="tdSondages"
+                  placeholder="td"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="tpSondages"
+                  placeholder="tp"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="moyenneSondages"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="module">
+              <p class="nomModule">Python 2</p>
+              <div class="notes">
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="examPython"
+                  placeholder="exam"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="tdPython"
+                  placeholder="tp"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="moyennePython"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="module">
+              <p class="nomModule">Data Mining</p>
+              <div class="notes">
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="examDataM"
+                  placeholder="exam"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="tdDataM"
+                  placeholder="td"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="moyenneDataM"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="module">
+              <p class="nomModule">Economie</p>
+              <div class="notes">
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="examEconomie"
+                  placeholder="exam"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="tdEconomie"
+                  placeholder="td"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="moyenneEconomie"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="module">
+              <p class="nomModule">Memoire</p>
+              <div class="notes">
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="noteMemoire"
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  name=""
+                  id="moyenneMemoire"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+        <div class="btn">
+          <button type="submit" id="sub">Calculer</button>
+          <button type="submit" id="semesterTwo">
+            <a href="/semestreTwo.html">S1</a>
+          </button>
+        </div>
+        <div class="affichages">
+          <div class="a">
+            <p id="moyenneSemestreTwo">Moyenne Générale :</p>
+            <p id="creditSemestreTwo">Total crédits :</p>
+            <p>
+              made by
+              <a href="https://github.com/Schismond">Abderraouf Benamara</a>
+            </p>
+          </div>
+          <div class="b">
+            <p id="ufTwo">Unité Fondamentale :</p>
+            <p id="umTwo">Unité Méthodologique :</p>
+            <p id="udTwo">Unité Découvertes :</p>
           </div>
         </div>
-        <div class="module">
-          <p class="nomModule">Python</p>
-          <div class="notes">
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="examPython"
-              placeholder="exam"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="tdPython"
-              placeholder="tp"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="moyennePython"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="module">
-          <p class="nomModule">Mesure</p>
-          <div class="notes">
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="examMesure"
-              placeholder="exam"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="tdMesure"
-              placeholder="td"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="moyenneMesure"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="module">
-          <p class="nomModule">Stat inf</p>
-          <div class="notes">
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="examStatInf"
-              placeholder="exam"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="tdStatInf"
-              placeholder="td"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="moyenneStatInf"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="module">
-          <p class="nomModule">Stat prev</p>
-          <div class="notes">
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="examStatPrev"
-              placeholder="exam"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="tdStatPrev"
-              placeholder="td"
-            />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="moyenneStatPrev"
-              disabled
-            />
-          </div>
-        </div>
-        <div class="module">
-          <p class="nomModule">Stage</p>
-          <div class="notes">
-            <input type="number" min="0" max="20" name="" id="noteStage" />
-            <input
-              type="number"
-              min="0"
-              max="20"
-              name=""
-              id="moyenneStage"
-              disabled
-            />
-          </div>
-        </div>
-      </div>
-    </main>
-    <div class="btn">
-      <button type="submit" id="sub">Calculer</button>
-      <button type="submit" id="semesterTwo">S1</button>
-    </div>
-    <div class="affichages">
-      <div class="a">
-        <p id="moyenneSemestreOne">Moyenne Générale :</p>
-        <p id="creditSemestreOne">Total crédits :</p>
-        <p>
-          made by <a href="https://github.com/Schismond">Abderraouf Benamara</a>
-        </p>
-      </div>
-      <div class="b">
-        <p id="ufOne">Unité Fondamentale :</p>
-        <p id="umOne">Unité Méthodologique :</p>
-        <p id="udOne">Unité Découvertes :</p>
-      </div>
-    </div>
 
-    <script src="/semestreTwo.js" defer></script>
+        <script src="/semestreTwo.js" defer></script>
+      </body>
+    </html>
   </body>
-</html>
-
-</body>
 </html>

@@ -77,22 +77,6 @@ class Stage extends Module {
   calculMoyenne() {
     return parseFloat(this.noteExamen);
   }
-
-  calculMoyenneFinale() {
-    let a = this.calculMoyenne();
-    return a * this.coefficient;
-  }
-
-  modulePassed() {
-    let b = this.calculMoyenne();
-    let moduleAchieved = false;
-    if (b >= 10) {
-      moduleAchieved = true;
-    } else {
-      moduleAchieved = false;
-    }
-    return moduleAchieved;
-  }
 }
 
 /***************************************************** VARIABLES ******************************************************/
@@ -114,24 +98,21 @@ let notes = [
 
 calculate.addEventListener("click", function () {
   function verifierChamps() {
-    let champsVide;
-    let fausseNote;
+    let champsVide = false;
+    let fausseNote = false;
     for (let i = 0; i < notes.length; i++) {
       if (notes[i].value == "") {
         champsVide = true;
-      } else {
-        champsVide = false;
+        break;
       }
-    }
-    if (champsVide == true) {
-      alert("Veuillez remplir tout les champs");
-    }
-    for (let i = 0; i < notes.length; i++) {
       if (notes[i].value > 20 || notes[i].value < 0) {
         fausseNote = true;
-      } else {
-        fausseNote = false;
+        break;
       }
+    }
+    
+    if (champsVide == true) {
+      alert("Veuillez remplir tout les champs");
     }
     if (fausseNote == true) {
       alert("Veuillez donner des notes correctes");
