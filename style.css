@@ -68,9 +68,18 @@ button:hover {
   gap: 3rem;
 }
 
-/* gpt */
+#semesterTwo:hover > * {
+  color: #3498db;
+}
 
-/* Style for the number input */
+#semesterTwo > * {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
 input[type="number"] {
   width: 100px;
   padding: 10px;
@@ -80,9 +89,52 @@ input[type="number"] {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the increment and decrement buttons */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media screen and (max-width: 426px) {
+  body {
+    font-size: 12px;
+    padding: 0px;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  
+  input[type="number"] {
+    width: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .affichages {
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .affichages >*>*{
+    margin-block:12px ;
+  }
+
+  .btn{
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  body {
+    font-size: 12px;
+    padding: 0px;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 10px;
+    font-size: 16px;
+  }
 }

@@ -74,11 +74,6 @@ class Stage extends Module {
     super(noteExamen, null, null, coefficient, credits);
   }
 
-  // constructor(noteStage, coefficient, credits) {
-  //   this.noteStage = parseFloat(noteStage);
-  //   this.coefficient = parseFloat(coefficient);
-  //   this.credits = parseFloat(credits);
-  // }
   calculMoyenne() {
     return parseFloat(this.noteExamen);
   }
