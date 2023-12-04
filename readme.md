@@ -9,4 +9,4 @@ The Grade Calculator is a simple project that allows you to input student grades
 - Determine whether a student passed or failed based on a passing threshold.
 - Easy-to-use interface for inputting grades.
 
-[Demo Here ]( https://schismond.github.io/moyenne-L3/)
+[ Demo Here ]( https://calcule-moyenne-l3-stid.netlify.app )
