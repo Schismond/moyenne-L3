@@ -2,7 +2,6 @@
 
 let examSondages = document.getElementById("examSondages");
 let tdSondages = document.getElementById("tdSondages");
-let tpSondages = document.getElementById("tpSondages");
 
 let examPython = document.getElementById("examPython");
 let tdPython = document.getElementById("tdPython");
@@ -81,7 +80,6 @@ class Stage extends Module {
 let notes = [
   examSondages,
   tdSondages,
-  tpSondages,
   examPython,
   tdPython,
   examDataM,
@@ -117,10 +115,9 @@ calculate.addEventListener("click", function () {
 
   /***************************************************** Modules ******************************************************/
 
-  let Sondages = new Module(
+  let Sondages = new ModuleSecondaire(
     examSondages.value,
     tdSondages.value,
-    tpSondages.value,
     3,
     7
   );
